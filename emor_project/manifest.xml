@@ -1,0 +1,18 @@
+<package>
+  <description brief="emor_wall">
+
+     emor_wall
+
+  </description>
+  <author>Michal Walecki</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/emor_wall</url>
+
+  <depend package="roscpp"/>
+  <depend package="sensor_msgs"/>
+  <depend package="geometry_msgs"/>
+
+</package>
+
+

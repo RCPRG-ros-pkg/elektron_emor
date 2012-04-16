@@ -1,0 +1,90 @@
+define cube model
+(
+  size [0.5 0.5 0.5]
+  gui_nose 0
+)
+
+define lms100 laser
+(
+
+  range_max 8.0
+  fov 270.0
+  samples 271
+  # generic model properties
+  color "blue"
+  size [ 0.10 0.10 0.15 ]
+)
+
+# elektron’s body
+define elektron position
+(
+	# actual size
+	size [0.50 0.36 0.22]
+	lms100(pose [ 0.150 0.000 -0.04 0 ])
+
+	# the shape of elektron
+	block
+	(
+		points 6
+		point[0] [  0.13  0.08 ]
+		point[1] [  0.11  0.16 ]
+		point[2] [ -0.23  0.16 ]
+		point[3] [ -0.23 -0.16 ]
+		point[4] [  0.11 -0.16 ]
+		point[5] [  0.13 -0.08 ]
+		z [0.12 0.20]
+	)
+	block
+	(
+		points 4
+		point[0] [  0.25  0.18 ]
+		point[1] [ -0.25  0.18 ]
+		point[2] [ -0.25 -0.18 ]
+		point[3] [  0.25 -0.18 ]
+		z [0 0.12]
+	)
+	# differential steering model
+	drive "diff"
+	# elektron’s centre of rotation offset from its centre of area
+	origin [0 0 0 0]
+	# draw a nose on the robot so we can see which way it points
+	gui_nose 1
+	# estimated mass in KG
+	mass 15.0 
+	# visibility options
+#	obstacle_return 1
+#	laser_return 1
+#	ranger_return 1
+#	blob_return 0
+	localization "odom"
+	odom_error [0.2 0.2 0 0.2]
+	localization_origin [0 0 0 0]
+)
+
+define floorplan model
+(
+  # sombre, sensible, artistic
+  color "gray30"
+  # most maps will need a bounding box
+  boundary 1
+  gui_nose 0
+  gui_grid 0
+  gui_outline 0
+  gripper_return 0
+  fiducial_return 0
+  laser_return 1
+)
+
+#######################################################################
+#######################################################################
+# set the resolution of the underlying raytrace model in meters
+resolution 0.02
+# set simulation timestep in milliseconds
+interval_sim 100  
+# set simulation window
+window( size [ 600.000 600.000 ] rotate [ 0.000 -1.560 ] scale 28.806)
+# load an environment bitmap
+floorplan( size [15 15 0.5] name "cave" bitmap "cave.png")
+# throw in a robot and other objects
+elektron( pose [ 4 4 0 45 ] name "elektron1" color "gray60")
+cube( pose [ 5 5.02 0 180 ] color "red")

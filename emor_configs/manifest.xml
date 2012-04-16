@@ -1,0 +1,17 @@
+<package>
+  <description brief="emor_configs">
+	Configuration and launch files for EMOR classes
+  </description>
+  <author>Wacek</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/emor_configs</url>
+
+  <depend package="roscpp"/>
+  <depend package="sensor_msgs"/>
+  <depend package="geometry_msgs"/>
+  <depend package="nav_msgs"/>
+
+</package>
+
+

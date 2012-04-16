@@ -1,0 +1,11 @@
+<stack>
+  <description brief="elektron_emor">
+    Applications for Elektron mobile robot for EMOR classes.
+  </description>
+  <author>Michal Walecki</author>
+  <license>BSD</license>  
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/elektron_emor</url>
+  <depend stack="ros" />
+
+</stack>
