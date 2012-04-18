@@ -23,27 +23,14 @@ int main(int argc, char** argv)
     }
     
  /*   if(counter < 20){
-			vel.linear.x = 0.2;
-			vel.angular.z = 0.0;
+			vel.linear.x = ...
+			vel.angular.z = ...
     }
     else if(counter < 40){
-			vel.linear.x = 0.2;
-			vel.angular.z = 0.5;
+			...
     }
-    else if(counter < 60){
-			vel.linear.x = 0.2;
-			vel.angular.z = 0.0;
-    }
-    else if(counter < 80){
-			vel.linear.x = 0.2;
-			vel.angular.z = -0.5;
-    }
-    else{
-			vel.linear.x = 0.0;
-			vel.angular.z = 0.0;
-	    vel_pub.publish(vel);
-			return 0;
-    }
+    else ...
+    
     counter++;
  */   
 
