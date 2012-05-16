@@ -1,0 +1,4 @@
+<launch>
+  <node name="stageros" pkg="stage" type="stageros" args="$(find emor_configs)/worlds/cave_updated.world"/>
+</launch>
+

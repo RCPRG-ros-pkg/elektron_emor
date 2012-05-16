@@ -48,7 +48,7 @@ void laserCallback(const sensor_msgs::LaserScanConstPtr& msg)
   vel.angular.z = -turn * M_PI/180.0;
 
   //ROS_INFO("l: %lf r: %lf x: %lf a: %lf", l_range, r_range, vel.linear.x, vel.angular.z);
-  printf("l: %lf r: %lf x: %lf a: %lf\n", l_range, r_range, vel.linear.x, vel.angular.z);
+  printf("l: %lf r: %lf x: %lf a: %lf\n, maxi: %d", l_range, r_range, vel.linear.x, vel.angular.z, msg->ranges.size());
   fflush(stdout);
 }
 
