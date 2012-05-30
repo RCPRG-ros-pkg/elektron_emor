@@ -76,6 +76,10 @@ int main(int argc, char** argv)
     ros::spinOnce();
     loop_rate.sleep();
   }
+  
+  vel.linear.x = 0.0;
+  vel.angular.z = 0.0;
+  vel_pub.publish(vel);
 
   return 0;
 }

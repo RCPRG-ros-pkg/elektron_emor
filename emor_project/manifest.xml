@@ -12,6 +12,9 @@
   <depend package="roscpp"/>
   <depend package="sensor_msgs"/>
   <depend package="geometry_msgs"/>
+  <depend package="tf"/>
+  <depend package="actionlib"/>
+  <depend package="move_base_msgs"/>
 
 </package>
 

@@ -1,0 +1,29 @@
+<launch>
+	<arg name="scan_topic" default="base_scan" />
+	
+	<!--
+	<master auto="start"/>
+	-->
+	
+	<!-- Run the map server -->
+	<!--
+	<node name="map_server" pkg="map_server" type="map_server" args="$(find elektron_navigation)/maps/map_5cm.pgm 0.05"/>\
+	-->
+
+	<!--- Run AMCL -->
+	<!--
+	<include file="$(find elektron_navigation)/launch/amcl_diff.launch" />
+	-->
+
+	<node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
+		<rosparam file="$(find emor_configs)/navigation/costmap_common_params.yaml" command="load" ns="global_costmap" />
+		<rosparam file="$(find emor_configs)/navigation/costmap_common_params.yaml" command="load" ns="local_costmap" />
+		<rosparam file="$(find emor_configs)/navigation/local_costmap_params.yaml" command="load" />
+		<rosparam file="$(find emor_configs)/navigation/global_costmap_params.yaml" command="load" />
+		<rosparam file="$(find emor_configs)/navigation/base_local_planner_params.yaml" command="load" />
+		
+		<param name="controller_frequency" type="double" value="5"/>
+		
+	        <remap from="scan" to="$(arg scan_topic)"/>
+	</node>
+</launch>
