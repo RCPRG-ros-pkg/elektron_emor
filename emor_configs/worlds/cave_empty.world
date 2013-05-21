@@ -4,14 +4,24 @@ define cube model
   gui_nose 0
 )
 
-define lms100 laser
-(
+#define lms100 laser
+#(
+#
+#  range_max 8.0
+#  fov 180.0
+#  samples 541
+#  # generic model properties
+#  color "blue"
+#  size [ 0.10 0.10 0.15 ]
+#)
 
-  range_max 8.0
-  fov 180.0
-  samples 541
-  # generic model properties
-  color "blue"
+define lms100 ranger
+(
+  sensor(
+    range [ 0 8 ]
+    fov 180.0
+    samples 541
+  )
   size [ 0.10 0.10 0.15 ]
 )
 
@@ -72,7 +82,7 @@ define floorplan model
   gui_outline 0
   gripper_return 0
   fiducial_return 0
-  laser_return 1
+  ranger_return 1
 )
 
 #######################################################################
