@@ -24,6 +24,6 @@
 		
 		<param name="controller_frequency" type="double" value="5"/>
 		
-	        <remap from="scan" to="$(arg scan_topic)"/>
+	        <remap from="scan_raw" to="$(arg scan_topic)"/>
 	</node>
 </launch>

@@ -1,0 +1,21 @@
+<launch>
+	
+	<!--
+	<master auto="start"/>
+	-->
+	
+	<!-- Run the map server -->
+	<!--
+	<node name="map_server" pkg="map_server" type="map_server" args="$(find elektron_navigation)/maps/map_5cm.pgm 0.05"/>\
+	-->
+
+	<!--- Run AMCL -->
+	<!--
+	<include file="$(find elektron_navigation)/launch/amcl_diff.launch" />
+	-->
+
+	<node pkg="gmapping" type="slam_gmapping" respawn="false" name="gmapping" output="screen">
+		<param name="temporalUpdate" type="double" value="0.1"/>
+	        <remap from="scan_raw" to="scan"/>
+	</node>
+</launch>

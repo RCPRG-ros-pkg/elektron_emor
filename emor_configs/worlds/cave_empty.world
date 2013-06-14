@@ -19,7 +19,7 @@ define lms100 ranger
 (
   sensor(
     range [ 0 8 ]
-    fov 180.0
+    fov 270.0
     samples 541
   )
   size [ 0.10 0.10 0.15 ]
@@ -83,6 +83,7 @@ define floorplan model
   gripper_return 0
   fiducial_return 0
   ranger_return 1
+  gui_move 0
 )
 
 #######################################################################
